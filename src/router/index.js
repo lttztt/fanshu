@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import List from '@/components/List'
 import signUp from '@/pages/signUp'
 import signIn from '@/pages/signIn'
+import ArticleCreate from '@/pages/article/create'
 
 Vue.use(Router)
 
@@ -28,6 +29,14 @@ export default new Router({
       path: '/signIn',
       name: 'signIn',
       component: signIn
+    },
+    {
+      path: '/ArticleCreate',
+      name: 'ArticleCreate',
+      component: ArticleCreate,
+      meat: {
+        needLogin: true
+      }
     },
   ]
 })
