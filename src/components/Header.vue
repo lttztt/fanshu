@@ -5,7 +5,7 @@
       <el-menu-item index="/list"><i class="fa fa-flag" aria-hidden="true"></i> 探索</el-menu-item>
 
         <template v-if="user">
-          <el-menu-item index="6" class="right"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</el-menu-item>
+          <el-menu-item index="6" class="right" @click="heandleExit"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</el-menu-item>
           <el-submenu index="5" class="right">
             <span slot="title"> {{ user.getUsername() }} </span>
             <el-menu-item index="5-1">个人中心</el-menu-item>
@@ -27,7 +27,7 @@
 
 <script>
 
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
 
   name: 'Header',
@@ -46,6 +46,12 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
+    },
+    ...mapActions(['exit']),
+    heandleExit(){
+      this.exit();
+      this.$api.SDK.User.logOut();
+      this.$message.success('成功退出!')
     }
   }
 };

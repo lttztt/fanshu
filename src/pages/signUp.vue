@@ -90,7 +90,7 @@ export default {
           user.setEmail(this.user.email);
 
           user.signUp().then((loginUser) =>{
-            this.$store.commit('setUser', loginUser);
+            this.$store.dispatch('login', loginUser);
             this.$router.go(-1);
             this.$message.success("注册成功!");
           }).catch(error =>{
