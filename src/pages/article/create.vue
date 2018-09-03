@@ -65,7 +65,7 @@ export default {
   },
   mounted(){
     this.initEditor();
-    this.$progress.finish();
+    this.$Progress.finish();
   },
   computed: mapState(['user']),
   methods: {
