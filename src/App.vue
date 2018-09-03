@@ -9,7 +9,8 @@
 export default {
   name: 'App',
   created(){
-    console.log(this.$store)
+    console.log(this.$store);
+    console.log(this.$api)
   }
 }
 </script>

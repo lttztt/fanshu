@@ -4,8 +4,19 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import api from './api'
 
 Vue.config.productionTip = false
+
+localStorage.setItem('debug', 'leancloud*')  //开启调试模式
+
+Vue.mixin({
+  beforeCreate(){
+    if(!this.$api){
+      this.$api = api;
+    }
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
