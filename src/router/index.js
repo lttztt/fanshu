@@ -5,6 +5,7 @@ import List from '@/components/List'
 import signUp from '@/pages/signUp'
 import signIn from '@/pages/signIn'
 import ArticleCreate from '@/pages/article/create'
+import ArticleList from '@/pages/List'
 
 Vue.use(Router)
 
@@ -37,6 +38,11 @@ export default new Router({
       meat: {
         needLogin: true
       }
+    },
+    {
+      path: '/article',
+      name: 'ArticleList',
+      component: ArticleList
     },
   ]
 })

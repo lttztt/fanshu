@@ -28,9 +28,9 @@ export default {
       this.$Progress.start()
       next()
     })
-    this.$router.afterEach((to, from) => {
-      this.$Progress.finish()
-    })
+    // this.$router.afterEach((to, from) => {
+    //   this.$Progress.finish()
+    // })
   }
 }
 </script>
