@@ -1,13 +1,20 @@
 <template>
   <div id="app">
+    <Header></Header>
     <router-view/>
     <vue-progress-bar></vue-progress-bar>
   </div>
 </template>
 
 <script>
+import Header from '@/components/Header'
+
 export default {
   name: 'App',
+  components:{
+    Header
+  }
+  ,
   mounted () {
     //  [App.vue specific] When App.vue is finish loading finish the progress bar
     this.$Progress.finish()

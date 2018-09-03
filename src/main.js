@@ -5,11 +5,15 @@ import App from './App'
 import router from './router'
 import store from './store'
 import api from './api'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Vue.use(ElementUI)
 
 // 加载进度条
 import VueProgressBar from 'vue-progressbar'
 const options = {
-  color: '#99CCCC',
+  color: '#20a0ff',
   failedColor: '#874b4b',
   thickness: '4px',
   transition: {
