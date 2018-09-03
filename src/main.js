@@ -33,6 +33,13 @@ Vue.config.productionTip = false
 
 localStorage.setItem('debug', 'leancloud*')  //开启调试模式
 
+const user = api.SDK.User.current();
+
+if(user) {
+  console.log(user);
+  store.commit('setUser', user)
+}
+
 Vue.mixin({
   beforeCreate(){
     if(!this.$api){

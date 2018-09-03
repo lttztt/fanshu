@@ -4,7 +4,7 @@
       <el-menu-item index="/">番薯</el-menu-item>
       <el-menu-item index="/list"><i class="fa fa-flag" aria-hidden="true"></i> 探索</el-menu-item>
 
-      <el-menu-item index="4" class="right"><i class="fa fa-user-o" aria-hidden="true"></i> 注册</el-menu-item>
+      <el-menu-item index="/signUp" class="right"><i class="fa fa-user-o" aria-hidden="true"></i> 注册</el-menu-item>
       <el-menu-item index="3" class="right"><i class="fa fa-key" aria-hidden="true"></i> 登陆</el-menu-item>
       <!-- <el-menu-item index="6" class="right"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</el-menu-item> -->
       <!-- <el-submenu index="5" class="right">
@@ -26,6 +26,13 @@
         active: '0'
       };
     },
+    created(){
+      this.active = this.$route.path; //解决刷新不高亮
+      this.$router.afterEach( (to, from) =>{
+        this.active = to.path; //解决编程式切换路由不高亮
+      })
+    }
+    ,
     methods: {
       handleSelect(key, keyPath){
         console.log(key, keyPath)
