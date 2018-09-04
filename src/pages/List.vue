@@ -4,7 +4,7 @@
       <h2>{{ title }}</h2>
     </header>
     <section>
-      <article v-for="article in articles">
+      <article v-for="article in articles" :key="article.get('id')">
         <h3>
           <router-link :to="{ name:'ArticleShow', params: { id: article.id }}">{{ article.get('title') }}</router-link>
         </h3>

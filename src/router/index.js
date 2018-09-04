@@ -6,6 +6,7 @@ import signUp from '@/pages/signUp'
 import signIn from '@/pages/signIn'
 import ArticleCreate from '@/pages/article/create'
 import ArticleList from '@/pages/List'
+import ArticleShow from '@/pages/article/index'
 
 Vue.use(Router)
 
@@ -40,9 +41,9 @@ export default new Router({
       }
     },
     {
-      path: '/article',
-      name: 'ArticleList',
-      component: ArticleList
+      path: '/article/:id',
+      name: 'ArticleShow',
+      component: ArticleShow
     },
   ]
 })

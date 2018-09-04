@@ -133,6 +133,7 @@ export default {
         console.log(article);
         const message =  `文章《${article.get('title')}》发布成功`;
         this.$message({message, type: 'success'})
+        this.$router.replace({name: "ArticleShow", params: {id: article.id}});
       }).catch(console.error);
     },
 
