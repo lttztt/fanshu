@@ -7,6 +7,7 @@ import ArticleCreate from '@/pages/article/create'
 import ArticleList from '@/pages/List'
 import ArticleShow from '@/pages/article/index'
 import ArticleEdit from '@/pages/article/edit'
+import User from '@/pages/user/index'
 
 Vue.use(Router)
 
@@ -53,5 +54,10 @@ export default new Router({
           needLogin: true
         }
     },
+    {
+      path: '/user/:id',
+      name: 'User',
+      component: User
+    }
   ]
 })
