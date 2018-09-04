@@ -42,13 +42,16 @@ export default {
       }
     };
   },
+  mounted(){
+    this.$Progress.finish();
+  },
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           this.$api.SDK.User.logIn(this.user.name, this.user.pwd).then((loginUser) => {
             this.$store.dispatch('login', loginUser); // 保存到 Vuex 中
-            this.$router.push({path: '/'}) // 回到上一页
+            this.$router.go(-1) // 回到上一页
             this.$message.success("登陆成功！")
           }).catch(error => {
             console.error(error)

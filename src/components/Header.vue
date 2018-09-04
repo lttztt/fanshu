@@ -50,6 +50,7 @@ export default {
     heandleExit(){
       this.exit();
       this.$api.SDK.User.logOut();
+      this.$router.push({path:'/'})
       this.$message.success('成功退出!')
     }
   }

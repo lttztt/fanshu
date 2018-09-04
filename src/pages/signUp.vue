@@ -80,6 +80,9 @@ export default {
       }
     };
   },
+  mounted(){
+    this.$Progress.finish();
+  },
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
@@ -91,7 +94,8 @@ export default {
 
           user.signUp().then((loginUser) =>{
             this.$store.dispatch('login', loginUser);
-            this.$router.go(-1);
+            // this.$router.go(-1);
+            this.$router.push({path: '/'})
             this.$message.success("注册成功!");
           }).catch(error =>{
             console.log(error);
