@@ -7,7 +7,6 @@
           <el-menu-item index="6" class="right" @click="heandleExit"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</el-menu-item>
           <el-submenu index="5" class="right">
             <span slot="title"> {{ user.getUsername() }} </span>
-            <el-menu-item index="5-1">个人中心</el-menu-item>
             <el-menu-item index="/article?type=me">我的文章</el-menu-item>
             <el-menu-item index="/ArticleCreate">发布文章</el-menu-item>
             <el-menu-item index="5-3">消息</el-menu-item>
