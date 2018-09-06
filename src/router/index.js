@@ -12,6 +12,7 @@ import Followee from '@/pages/user/myFollowee'
 import Follower from '@/pages/user/myFollower'
 import Friend from '@/pages/user/friend'
 import Message from '@/pages/user/message'
+import MyMessage from '@/pages/user/myMessage'
 
 Vue.use(Router)
 
@@ -86,8 +87,8 @@ export default new Router({
     },
     {
       path: '/message',
-      name: 'Message',
-      component: Message,
+      name: 'MyMessage',
+      component: MyMessage,
       meta: {
         needLogin: true
       }
