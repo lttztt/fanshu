@@ -9,7 +9,7 @@
           <el-input v-model="user.name"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="pwd">
-          <el-input type="password" v-model="user.pwd"></el-input>
+          <el-input type="password" v-model="user.pwd" @keyup.enter.native="submitForm('form')" ></el-input>
         </el-form-item>
         <div class="oprator">
           <el-button class="submit" type="primary" @click="submitForm('form')">登录</el-button>
@@ -51,29 +51,30 @@ export default {
         if (valid) {
           this.$api.SDK.User.logIn(this.user.name, this.user.pwd).then((loginUser) => {
             this.$store.dispatch('login', loginUser); // 保存到 Vuex 中
-            this.$router.go(-1) // 回到上一页
+            this.$router.replace('/article?type=all') // 回到上一页
             this.$message.success("登陆成功！")
           }).catch(error => {
-            console.error(error)
-            this.$message.error(error.message)
+            this.$message.error(error.message);
           })
 
         } else {
-          console.log('error submit!!');
            this.$message.error('错了哦，您填写的信息有错误，请按照提示修改。');
           return false;
         }
       });
     },
+    test(){
+      console.log('enter-------------------------------------------')
+    }
   }
 };
 </script>
 <style lang="css" scoped>
-.container{
-  padding: 60px 10%;
-  background: #fafafa;
-  height: calc(100vh - 180px);
-}
+/* .container{ */
+  /* padding: 60px 10%; */
+  /* background: #fafafa; */
+  /* height: calc(100vh - 180px); */
+/* } */
 
 h1{
   text-align: center;

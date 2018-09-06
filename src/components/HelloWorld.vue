@@ -1,8 +1,6 @@
 <template>
-  <div class="hello">
+  <div class="hello container">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <router-link to="/List">List</router-link>
   </div>
 </template>
 
@@ -11,7 +9,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome my friend!'
     }
   },
   mounted(){

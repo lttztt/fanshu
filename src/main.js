@@ -47,7 +47,7 @@ Vue.use(VueProgressBar, options)
 
 Vue.config.productionTip = false
 
-// localStorage.setItem('debug', 'leancloud*')  //开启调试模式
+localStorage.setItem('debug', 'leancloud*')  //开启调试模式
 
 const user = api.SDK.User.current();
 
