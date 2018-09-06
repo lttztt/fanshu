@@ -14,7 +14,7 @@
           <el-input type="password" v-model="user.pwd"></el-input>
         </el-form-item>
         <el-form-item label="确认密码" prop="cpwd">
-          <el-input type="password" v-model="user.cpwd"></el-input>
+          <el-input type="password" v-model="user.cpwd" @keyup.enter.native="submitForm('form')"></el-input>
         </el-form-item>
 
         <div class="oprator">
