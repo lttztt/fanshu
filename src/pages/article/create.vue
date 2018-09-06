@@ -132,6 +132,19 @@ export default {
       article.save().then((article) => {
         console.log(article);
         const message =  `文章《${article.get('title')}》发布成功`;
+
+        const status = new this.$api.SDK.Status();
+        status.inboxType = 'friend';
+        status.set('title', article.get('title'));
+        status.set('type', 'create_article');
+        status.set('article', article);
+
+        this.$api.SDK.Status.sendStatusToFollowers(status).then((status) =>{
+          console.dir(status)
+        },(err) =>{
+          console.dir(err);
+        })
+
         this.$message({message, type: 'success'})
         this.$router.replace({name: "ArticleShow", params: {id: article.id}});
       }).catch(console.error);
