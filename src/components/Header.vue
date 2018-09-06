@@ -13,7 +13,7 @@
             <el-menu-item index="/ArticleCreate">发布文章</el-menu-item>
             <el-menu-item index="/followee">我的关注</el-menu-item>  
             <el-menu-item index="/follower">我的粉丝</el-menu-item>  
-            <el-menu-item index="5-3">消息</el-menu-item>
+            <el-menu-item index="/message">消息</el-menu-item>
           </el-submenu>
         </template>
         <template v-else>
