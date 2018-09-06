@@ -15,13 +15,13 @@
       <div class="el-form-item is-required" :class="{ 'is-error': validate.error }">
         <label class="el-form-item__label">文章内容</label>
         <div class="el-form-item__content">
-          <div id="editor"></div>
+          <div id="editor" @keyup.enter.ctrl="submit"></div>
           <div v-if="validate.error" class="el-form-item__error">正文怎能没有内容呢？</div>
         </div>
       </div>
 
       <div class="oprator right">
-        <el-button class="submit" type="primary" @click="submit" @keyup.enter="submit">发布文章</el-button>
+        <el-button class="submit" type="primary" @click="submit">发布文章</el-button>
       </div>
 
     </el-form>
