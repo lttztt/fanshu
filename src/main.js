@@ -29,9 +29,9 @@ Vue.use(ElementUI)
 // 加载进度条
 import VueProgressBar from 'vue-progressbar'
 const options = {
-  color: '#20a0ff',
+  color: '#159957',
   failedColor: '#874b4b',
-  thickness: '4px',
+  thickness: '2px',
   transition: {
     speed: '0.2s',
     opacity: '0.6s',
@@ -47,7 +47,7 @@ Vue.use(VueProgressBar, options)
 
 Vue.config.productionTip = false
 
-localStorage.setItem('debug', 'leancloud*')  //开启调试模式
+// localStorage.setItem('debug', 'leancloud*')  //开启调试模式
 
 const user = api.SDK.User.current();
 
