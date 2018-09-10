@@ -15,13 +15,11 @@
               <el-menu-item index="/follower">我的粉丝</el-menu-item>  
               <el-menu-item index="/message">消息</el-menu-item>
             </el-submenu>
-        </template>
-        <template v-else>
-          <el-menu-item index="/signUp" class="right myLi"><i class="fa fa-user-o" aria-hidden="true"></i> 注册</el-menu-item>
-          <el-menu-item index="/signIn" class="right myLi"><i class="fa fa-key" aria-hidden="true"></i> 登陆</el-menu-item>
-        </template>
-
-
+          </template>
+          <template v-else>
+            <el-menu-item index="/signUp" class="right myLi"><i class="fa fa-user-o" aria-hidden="true"></i> 注册</el-menu-item>
+            <el-menu-item index="/signIn" class="right myLi"><i class="fa fa-key" aria-hidden="true"></i> 登陆</el-menu-item>
+          </template>
     </el-menu>
   </div>
 

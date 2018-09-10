@@ -7,4 +7,4 @@ AV.init({
   appKey
 });
 
-export default { SDK: AV};
+export default { SDK: AV };
