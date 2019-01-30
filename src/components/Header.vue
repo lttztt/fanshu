@@ -71,11 +71,11 @@ export default {
   margin-left: 0;
   font-size: 25px;
   font-weight: 100;
-  background: #20a0ff;
-  color: #fff;
+  /*background: #20a0ff;*/
+  /*color: #20a0ff;*/
 }
 
 .logo:hover {
-  background: #20a0ff;
+  /*background: #20a0ff;*/
 }
 </style>

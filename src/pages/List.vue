@@ -5,10 +5,13 @@
     </header>
     <section>
       <article v-for="article in articles" :key="article.get('id')">
-        <h3>
-          <router-link :to="{ name:'ArticleShow', params: { id: article.id }}">{{ article.get('title') }}</router-link> |
-          <router-link :to="{ name:'User', params: { id: article.get('author').id }}">{{ article.get('author').get('username') }}</router-link>
-        </h3>
+        <div class="article-div">
+          <span>{{ article.get('updatedAt').toLocaleDateString().split('/').join('-') }}</span>
+          <router-link class="article-title" :to="{ name:'ArticleShow', params: { id: article.id }}">{{ article.get('title') }}</router-link>
+          <!--<span class="seg">-</span>-->
+          <!--<p v-html="article.get('content')"></p>-->
+          <!--<router-link class="article-user" :to="{ name:'User', params: { id: article.get('author').id }}">{{ article.get('author').get('username') }}</router-link>-->
+        </div>
       </article>
     </section>
   </div>
@@ -69,6 +72,7 @@ export default {
       q.find().then((articles) => {
           this.articles = articles;
           this.$Progress.finish();
+          console.log(this.articles[0])
       }).catch(this.fail);
     },
     fail(error){
@@ -97,6 +101,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .container{
+    padding: 0 20%;
+  }
 h2{
   text-align: center;
 }
@@ -106,4 +113,29 @@ header{
   margin-bottom: 5px;
   padding: 20px;
 }
+  section{
+    /*border: 1px solid red;*/
+    /*text-align: center;*/
+  }
+  .article-div{
+    border-bottom: 1px solid #9D9D9D;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    padding: 8px 0;
+  }
+  .article-div > a:hover{
+    color: #1ABC9C;
+  }
+  .article-div > span{
+    font-size: 12px;
+    color: #9D9D9D;
+    margin: 8px;
+  }
+  .article-title{
+  }
+  .seg{
+    margin: 0 10px;
+  }
 </style>

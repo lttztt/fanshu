@@ -1,6 +1,7 @@
 <template>
   <div class="hello container">
     <h1>{{ msg }}</h1>
+    <img src="../assets/images/bg1.jpg" class="bannerImg">
   </div>
 </template>
 
@@ -20,8 +21,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .bannerImg{
+    width: 100%;
+  }
 h1, h2 {
   font-weight: normal;
+  text-align: center;
 }
 ul {
   list-style-type: none;
