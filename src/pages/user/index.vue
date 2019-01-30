@@ -4,13 +4,17 @@
 
     <hr>
     <div class="oprator" v-if="user">
-      <button v-if="user.id != current_user.id" @click="toggleFollow">{{ followed? '取消关注':'关注' }}该用户</button>
+      <el-button type="warning" v-if="user.id != current_user.id && followed" @click="toggleFollow">取消关注</el-button>
+      <el-button type="success" v-else-if="user.id != current_user.id" @click="toggleFollow">关注用户</el-button>
 
-      <button v-if="user.id != current_user.id" @click="dialogFormVisible = true">发送私信</button>
+      <el-button type="success" plain v-if="user.id != current_user.id" @click="dialogFormVisible = true">发送私信</el-button>
     </div>
-    <ul>
-      <li v-for="article in articles" :key="article.id"><router-link :to="{ name: 'ArticleShow', params: {id: article.id} }">{{ article.get('title') }}</router-link></li>
-    </ul>
+
+    <el-card class="box-card">
+      <div v-for="article in articles" :key="article.id">
+        <i class="el-icon-document"></i><router-link :to="{ name: 'ArticleShow', params: {id: article.id} }">{{ article.get('title') }}</router-link>
+      </div>
+    </el-card>
 
     <el-dialog title="发送私信给该用户" :visible.sync="dialogFormVisible">
       <el-form :model="form" ref="form" label-width="80px" label-position="top" :rules="rules">
@@ -143,4 +147,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  h3{
+  }
+  .box-card{
+    margin-top: 20px;
+  }
+  .box-card a{
+    margin-left: 8px;
+  }
 </style>

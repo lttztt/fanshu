@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="header-container">
     <el-menu :router="true" :default-active="active" class="el-menu" mode="horizontal" @select="handleSelect">
       <el-menu-item class="logo" index="/">番薯</el-menu-item>
       <el-menu-item index="/article?type=all"><i class="fa fa-flag" aria-hidden="true"></i> 探索</el-menu-item>
@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.container {
+.header-container {
   padding: 0 10%;
   background: #eef1f6;
 }

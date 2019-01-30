@@ -1,10 +1,14 @@
 body{
   background: #fafafa;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 }
 .container{
-  padding: 0 10%;
+  padding: 0 20%;
 }
 a{
   text-decoration: none;
   color: #333;
+}
+ul,ol{
+  list-style: none;
 }

@@ -10,7 +10,7 @@
           <router-link class="article-title" :to="{ name:'ArticleShow', params: { id: article.id }}">{{ article.get('title') }}</router-link>
           <!--<span class="seg">-</span>-->
           <!--<p v-html="article.get('content')"></p>-->
-          <!--<router-link class="article-user" :to="{ name:'User', params: { id: article.get('author').id }}">{{ article.get('author').get('username') }}</router-link>-->
+          <router-link class="article-user" :to="{ name:'User', params: { id: article.get('author').id }}">{{ article.get('author').get('username') }}</router-link>
         </div>
       </article>
     </section>
@@ -101,9 +101,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  .container{
-    padding: 0 20%;
-  }
 h2{
   text-align: center;
 }
