@@ -62,7 +62,6 @@ export default {
   padding: 0 10%;
   background: #eef1f6;
 }
-
 .right.myLi {
   float: right;
 }
@@ -74,8 +73,16 @@ export default {
   /*background: #20a0ff;*/
   /*color: #20a0ff;*/
 }
-
 .logo:hover {
   /*background: #20a0ff;*/
 }
+@media (max-width: 800px){
+  .header-container{
+    padding: 0;
+  }
+  .logo{
+    font-size: 18px;
+  }
+}
+
 </style>

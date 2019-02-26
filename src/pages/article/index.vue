@@ -3,8 +3,8 @@
   <template v-if="article">
     <h2>{{ article.get('title') }}</h2>
     <div class="oprator" v-if="uid == article.get('author').id">
-      <router-link :to="{ name:'ArticleEdit',params: {id: article.id} }" tag="button">修改</router-link>
-      <button @click="destroy">删除</button>
+      <router-link :to="{ name:'ArticleEdit',params: {id: article.id} }" class="el-button el-button--info" tag="button" round>修改</router-link>
+      <button class="el-button el-button--danger" @click="destroy">删除</button>
     </div>
     <div>
       <p>Author: {{article.get('author').get('username')}}</p>

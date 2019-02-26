@@ -135,4 +135,10 @@ header{
   .seg{
     margin: 0 10px;
   }
+
+  @media (max-width: 800px) {
+    .article-div{
+      font-size: 14px;
+    }
+  }
 </style>

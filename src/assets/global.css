@@ -3,7 +3,13 @@ body{
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 }
 .container{
-  padding: 0 20%;
+  padding: 0 10%;
+}
+
+@media (max-width: 800px) {
+  .container{
+    padding: 0;
+  }
 }
 a{
   text-decoration: none;
