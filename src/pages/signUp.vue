@@ -63,7 +63,7 @@ export default {
       rules: {
         name: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 3, max: 7, message: '长度在 3 到 7 个字符之间', trigger: 'blur' }
+          { min: 3, max: 20, message: '长度在 3 到 20 个字符之间', trigger: 'blur' }
         ],
         email: [
           { required: true, message: '请填入邮箱', trigger: 'blur' },
